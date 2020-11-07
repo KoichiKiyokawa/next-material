@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Button } from '@material-ui/core'
 import { useCounters } from '@/hooks/counters'
 import { Counter } from '@/components/molecules/Counter'
@@ -11,6 +12,11 @@ const CounterPage = () => {
     changeTitleAt,
     addCounter,
   } = useCounters()
+
+  const sum = useMemo(
+    () => counters.reduce((acc, current) => acc + current.count, 0),
+    [counters]
+  )
 
   return (
     <>
@@ -33,6 +39,7 @@ const CounterPage = () => {
       >
         Add Counter
       </Button>
+      <span>Sum of count: {sum}</span>
     </>
   )
 }
