@@ -1,8 +1,12 @@
 import Head from 'next/head'
-import type { AppProps } from 'next/app'
 import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
 
 import { Nav } from '@/components/organisms/Nav'
+
+import Amplify from 'aws-amplify'
+import awsExports from '../aws-exports'
+Amplify.configure(awsExports)
 
 const HEADER_HEIGHT = 64
 const HEADER_MARGIN = 20
