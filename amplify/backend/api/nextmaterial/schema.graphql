@@ -5,3 +5,7 @@ type Todo @model {
   done: Boolean!
   createdAt: AWSDateTime
 }
+
+type Query {
+  add(a: Number, b: Number) @function(name: "ResolverFunction")
+}
