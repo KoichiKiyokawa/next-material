@@ -6,6 +6,9 @@ export const Nav = () => (
     <Toolbar>
       <Typography variant="h6">Next</Typography>
       <div style={{ marginLeft: 'auto' }}>
+        <Link href="/todos">
+          <Button color="inherit">Todo List</Button>
+        </Link>
         <Link href="/login">
           <Button color="inherit">ログイン</Button>
         </Link>
